@@ -1,0 +1,186 @@
+/**
+ * =====================================
+ *         UI Design Guide
+ * =====================================
+ * 
+ * Project: Verdant - Sustainable Fashion
+ * Type: E-commerce / Fashion Brand
+ * 
+ * Design Language
+ * Style: Minimalist · Organic · Premium
+ * Vision: Earth-conscious luxury that feels timeless and pure
+ * 
+ * Philosophy:
+ * Natural beauty through simplicity - every element breathes with sustainable elegance.
+ * Generous whitespace mimics nature's rhythm, while subtle textures tell stories of craft.
+ * Color palette drawn from earth's gentle palette - sage, sand, stone, and sky.
+ * =====================================
+ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Natural eco-conscious color palette */
+    --background: 45 20% 97%;           /* Warm cream white */
+    --foreground: 20 15% 15%;           /* Deep charcoal */
+    --card: 45 25% 95%;                 /* Soft ivory */
+    --card-foreground: 20 15% 15%;      
+    --popover: 45 25% 95%;              
+    --popover-foreground: 20 15% 15%;   
+    --primary: 120 25% 25%;             /* Deep sage green */
+    --primary-foreground: 45 20% 97%;   
+    --secondary: 35 30% 85%;            /* Warm sand */
+    --secondary-foreground: 20 15% 15%; 
+    --muted: 40 15% 88%;                /* Light stone */
+    --muted-foreground: 20 10% 45%;     /* Medium gray */
+    --accent: 25 40% 80%;               /* Terracotta accent */
+    --accent-foreground: 20 15% 15%;    
+    --destructive: 0 84.2% 60.2%;       
+    --destructive-foreground: 0 0% 98%; 
+    --border: 40 12% 85%;               /* Soft border */
+    --input: 40 12% 85%;                
+    --ring: 120 25% 25%;                /* Sage focus ring */
+    --chart-1: 120 35% 45%;             /* Sage */
+    --chart-2: 35 45% 65%;              /* Warm sand */
+    --chart-3: 25 40% 60%;              /* Terracotta */
+    --chart-4: 200 25% 65%;             /* Sky blue */
+    --chart-5: 60 30% 70%;              /* Olive */
+    --radius: 0.75rem
+  ;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%}
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%
+  ;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%}
+}
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-light;
+  }
+}
+
+@layer components {
+  /* Organic shapes and textures */
+  .organic-blob {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  
+  .organic-blob-alt {
+    border-radius: 40% 60% 70% 30% / 40% 70% 30% 60%;
+  }
+  
+  /* Subtle texture overlay */
+  .texture-overlay {
+    background-image: 
+      radial-gradient(circle at 25% 25%, rgba(120, 180, 120, 0.03) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, rgba(180, 150, 120, 0.03) 0%, transparent 50%);
+  }
+  
+  /* Gentle animations */
+  .slide-in-left {
+    animation: slideInLeft 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  
+  .slide-in-right {
+    animation: slideInRight 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  
+  .slide-in-up {
+    animation: slideInUp 0.6s ease-out forwards;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  
+  .stagger-1 { animation-delay: 0.1s; }
+  .stagger-2 { animation-delay: 0.2s; }
+  .stagger-3 { animation-delay: 0.3s; }
+  .stagger-4 { animation-delay: 0.4s; }
+  .stagger-5 { animation-delay: 0.5s; }
+  .stagger-6 { animation-delay: 0.6s; }
+  
+  /* Fabric texture simulation */
+  .fabric-texture {
+    background-image: 
+      linear-gradient(45deg, rgba(0,0,0,0.02) 25%, transparent 25%),
+      linear-gradient(-45deg, rgba(0,0,0,0.02) 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, rgba(0,0,0,0.02) 75%),
+      linear-gradient(-45deg, transparent 75%, rgba(0,0,0,0.02) 75%);
+    background-size: 4px 4px;
+    background-position: 0 0, 0 2px, 2px -2px, -2px 0px;
+  }
+  
+  /* Natural gradient backgrounds */
+  .natural-gradient {
+    background: linear-gradient(135deg, 
+      hsl(var(--background)) 0%, 
+      hsl(var(--secondary)) 100%);
+  }
+}
+
+@keyframes slideInLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
